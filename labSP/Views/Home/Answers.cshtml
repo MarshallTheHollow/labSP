@@ -1,0 +1,10 @@
+﻿@model labSP.Models.MathOutput
+@{
+    ViewBag.Title = "Answers";
+}
+
+<h2>Answers</h2>
+@foreach(var elem in Model.answers)
+{
+    <h6>@elem</h6>
+}

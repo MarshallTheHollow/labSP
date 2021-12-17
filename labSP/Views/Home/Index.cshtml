@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "ДА";
+}
+
+<form action="/Home/Answers" method="post">
+    <table>
+        <tr>
+            <th>Компоненты сплава </th>
+            <th>Сплав №1</th>
+            <th>Сплав №2</th>
+            <th>Сплав №3</th>
+            <th>Минимум</th>
+            <th>Максимум</th>
+        </tr>
+        <tr>
+            <th>Cu</th>
+            <th><input type="text" name="Alloy[0].Cu" value="0,35"/></th>
+            <th><input type="text" name="Alloy[1].Cu" value="0,3"/></th>
+            <th><input type="text" name="Alloy[2].Cu" value="0,25"/></th>
+            <th><input type="text" name="Cuvalue.min" value="4"/></th>
+            <th><input type="text" name="Cuvalue.max" value="10"/></th>
+        </tr>
+        <tr>
+            <th>Sn</th>
+            <th><input type="text" name="Alloy[0].Sn" value="0,3"/></th>
+            <th><input type="text" name="Alloy[1].Sn" value="0,25"/></th>
+            <th><input type="text" name="Alloy[2].Sn" value="0,2"/></th>
+            <th><input type="text" name="Snvalue.min" value="2,5"/></th>
+            <th><input type="text" name="Snvalue.min" value="10"/></th>
+        </tr>
+        <tr>
+            <th>Pb</th>
+            <th><input type="text" name="Alloy[0].Pb" value="0,1"/></th>
+            <th><input type="text" name="Alloy[1].Pb" value="0,15"/></th>
+            <th><input type="text" name="Alloy[2].Pb" value="0,1"/></th>
+            <th><input type="text" name="Pbvalue.min" value="1"/></th>
+            <th><input type="text" name="Pbvalue.max" value="4"/></th>
+        </tr>
+        <tr>
+            <th>Zn</th>
+            <th><input type="text" name="Alloy[0].Zn" value="0,25"/></th>
+            <th><input type="text" name="Alloy[1].Zn" value="0,3"/></th>
+            <th><input type="text" name="Alloy[2].Zn" value="0,45"/></th>
+            <th><input type="text" name="Znvalue.min" value="5"/></th>
+            <th><input type="text" name="Znvalue.max" value="8"/></th>
+        </tr>
+        <tr>
+            <th>Стоимость</th>
+            <th><input type="text" name="Alloy[0].Cost" value="4"/></th>
+            <th><input type="text" name="Alloy[1].Cost" value="5"/></th>
+            <th><input type="text" name="Alloy[2].Cost" value="8"/></th>
+        </tr>
+        <tr>
+            <th>Необходимый вес</th>
+            <th><input type="text" name="requiredweight" value="14"/></th>
+        </tr>
+    </table>
+    <button type="submit">ДА</button>
+    <input type="text" name="Alloy[0].xid" value="1" hidden />
+    <input type="text" name="Alloy[1].xid" value="2" hidden />
+    <input type="text" name="Alloy[2].xid" value="3" hidden />
+</form>
