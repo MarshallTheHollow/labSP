@@ -131,6 +131,7 @@
     <Compile Include="Models\MathInput.cs" />
     <Compile Include="Models\MathOutput.cs" />
     <Compile Include="Models\SolverRow.cs" />
+    <Compile Include="Models\TaxiOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

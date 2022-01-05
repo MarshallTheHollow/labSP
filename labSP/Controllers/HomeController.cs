@@ -28,18 +28,30 @@ namespace labSP.Controllers
             return View(Output);
         }
 
-        public ActionResult About()
+        [HttpGet]
+        public ActionResult Contact(TaxiInput ti)
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            TaxiOutput to = new TaxiOutput();           
+            if (ti.distance == 0 && ti.kolvo == 0)
+            {
+                to.distance = 0;
+                to.kolvo = 0;
+                to.time = 0;
+                to.value = 0;
+            }
+            else
+            {
+                to = taxcalc(ti.distance, ti.kolvo);
+            }
+            return View(to);
         }
 
-        public ActionResult Contact()
+        public TaxiOutput taxcalc(double dist, double kolvo)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            double time = 113737440.341 + 129754.129 + 47.605 * (kolvo - 277438.833) + 152.969 * (1 - 172449.833) + 162.7 * (dist - 456547.267);
+            double value = 1995756 + 1857.878 + 0.007 * (time - 113737438.667) + 2.13 * (dist - 456547.267) + 0.041 * (kolvo - 277438.833) + 1.262 * (1 - 172449.833);
+            TaxiOutput to = new TaxiOutput() { value = Math.Round(value,2), time = Math.Round(time,2), distance = dist, kolvo = kolvo };
+            return to;
         }
     }
 }

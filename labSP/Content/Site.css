@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("https://sun9-33.userapi.com/impg/N_JdGSpvjXXrRgcFY5XSMZ4NmnYA03p6cr7H5g/IUgAT9tOeVw.jpg?size=2560x1440&quality=96&sign=da17170584a00a09b7d29e99296c9ae6&type=album");
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +23,53 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.mydiv 
+{
+    margin-top: 20px;
+    color: white;
+    padding: 10px;
+    background: rgba( 255, 255, 255, 0.15 );
+    backdrop-filter: blur( 10.0px );
+    border-radius: 15px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.mynotmy 
+{
+    padding: 2px 5px 2px 5px;
+}
+
+.myinput {
+    
+    color: #c5c1d5;
+    border-radius: 15px;
+    border: 1px solid rgba( 0, 0, 0, 0.18 );
+    background-color: rgba(95, 103, 202, 0.5);
+    padding: 3px 3px 0px 10px;
+    text-decoration: none;
+    line-height: normal;
+    max-width: 150px;
+    margin-right: 10px;
+}
+    .myinput:hover {       
+        background: rgba(95, 103, 202, 0.75);
+    }
+
+.mybutt {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #1b2053;
+    border-radius: 15px;
+    border: 1px solid rgba( 0, 0, 0, 0.18 );
+    background-color: rgba(210, 147, 56, 0.75);
+    margin: 2px 3px 2px 2px;
+    text-decoration: none;
+    line-height: normal;
+}
+
+    .mybutt:hover {
+        background-color: rgba(210, 147, 56, 1);
+    }
+
+

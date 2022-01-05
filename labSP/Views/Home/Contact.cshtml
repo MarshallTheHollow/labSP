@@ -1,17 +1,18 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@model labSP.Models.TaxiOutput
+@{
+    ViewBag.Title = "Расчет стоимости поездки такси";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
-
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+<h1>Введите свои данные</h1>
+<form method="get">
+    <div>
+        <h5>Кол-во пассажиров</h5>
+        <input type="text" name="kolvo" value="@Model.kolvo.ToString().Replace(",",".")"/>
+    </div>
+    <div>
+        <h5>Дистанция поездки (в км.)</h5>
+        <input type="text" name="distance" value="@Model.distance.ToString().Replace(",",".")" />
+    </div>
+    <button type="submit">Посчитать</button>
+</form>
+<h3>Стоимость поездки (в долларах): @Model.value</h3>
+<h3>Время поездки (в секундах): @Model.time</h3>

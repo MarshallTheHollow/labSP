@@ -52,10 +52,27 @@ namespace labSP.Models
             model.AddGoal("goal", GoalKind.Minimize, Model.Sum(Model.ForEach(users, xid => choose[xid] * cost[xid]))); 
 
             // Ограничения по сплавам
-            model.AddConstraints("cumax", /*Model.Sum(Model.ForEach(users, xid => choose[xid] * cu[xid])) <= mi.Cuvalue.max,*/ Model.Sum(Model.ForEach(users, xid => choose[xid] * cu[xid])) >= mi.Cuvalue.min);
-            model.AddConstraints("snmax", /*Model.Sum(Model.ForEach(users, xid => choose[xid] * sn[xid])) <= mi.Snvalue.max,*/ Model.Sum(Model.ForEach(users, xid => choose[xid] * sn[xid])) >= mi.Snvalue.min);
-            model.AddConstraints("pbmax", /*Model.Sum(Model.ForEach(users, xid => choose[xid] * pb[xid])) <= mi.Pbvalue.max,*/ Model.Sum(Model.ForEach(users, xid => choose[xid] * pb[xid])) >= mi.Pbvalue.min);
-            model.AddConstraints("znmax", /*Model.Sum(Model.ForEach(users, xid => choose[xid] * zn[xid])) <= mi.Znvalue.max,*/ Model.Sum(Model.ForEach(users, xid => choose[xid] * zn[xid])) >= mi.Znvalue.min);
+            model.AddConstraints("cumax", Model.Sum(Model.ForEach(users, xid => choose[xid] * cu[xid])) <= mi.Cuvalue.max, Model.Sum(Model.ForEach(users, xid => choose[xid] * cu[xid])) >= mi.Cuvalue.min);
+            model.AddConstraints("snmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * sn[xid])) <= mi.Snvalue.max, Model.Sum(Model.ForEach(users, xid => choose[xid] * sn[xid])) >= mi.Snvalue.min);
+            model.AddConstraints("pbmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * pb[xid])) <= mi.Pbvalue.max, Model.Sum(Model.ForEach(users, xid => choose[xid] * pb[xid])) >= mi.Pbvalue.min);
+            model.AddConstraints("znmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * zn[xid])) <= mi.Znvalue.max, Model.Sum(Model.ForEach(users, xid => choose[xid] * zn[xid])) >= mi.Znvalue.min);
+
+            //if (mi.Cuvalue.max < mi.Cuvalue.min)
+            //{
+            //    model.AddConstraints("cumax", Model.Sum(Model.ForEach(users, xid => choose[xid] * cu[xid])) <= mi.Cuvalue.max);
+            //}
+            //if (mi.Snvalue.max < mi.Snvalue.min)
+            //{
+            //    model.AddConstraints("snmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * sn[xid])) <= mi.Snvalue.max);
+            //}
+            //if (mi.Pbvalue.max < mi.Pbvalue.min)
+            //{
+            //    model.AddConstraints("pbmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * pb[xid])) <= mi.Pbvalue.max);
+            //}
+            //if (mi.Znvalue.max < mi.Znvalue.min)
+            //{
+            //    model.AddConstraints("znmax", Model.Sum(Model.ForEach(users, xid => choose[xid] * zn[xid])) <= mi.Znvalue.max);
+            //}
 
             model.AddConstraint("sum", Model.Sum(Model.ForEach(users, xid => choose[xid])) == mi.requiredweight);
         
