@@ -25,6 +25,9 @@ namespace labSP.Controllers
             MathOutput Output = new MathOutput();
             Calcs cal = new Calcs();
             Output = cal.Calc(m);
+            ViewBag.answer1 = Newtonsoft.Json.JsonConvert.SerializeObject(Output.answers[0]);
+            ViewBag.answer2 = Newtonsoft.Json.JsonConvert.SerializeObject(Output.answers[1]);
+            ViewBag.answer3 = Newtonsoft.Json.JsonConvert.SerializeObject(Output.answers[2]);
             return View(Output);
         }
 
